@@ -5,6 +5,7 @@ variable "ec2_count" {
 
 variable "tags" {
     default = {
+        Name = "test-ec2"
         Purpose = "tutorial"
         Repo = "github.com/piotrjaromin/terraform-tutorial"
     }

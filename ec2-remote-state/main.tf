@@ -23,6 +23,7 @@ resource aws_instance web {
   // notice that we are refernicg data resource with "data" prefix
   ami           = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"
+  key_name = "terraform-access"
 
   tags {
     Name = "test-ec2"

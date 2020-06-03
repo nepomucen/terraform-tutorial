@@ -6,7 +6,7 @@ data aws_ami ubuntu {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
   filter {
@@ -22,9 +22,10 @@ data aws_ami ubuntu {
 resource aws_instance web {
   // notice that we are refernicg data resource with "data" prefix
   ami           = "${data.aws_ami.ubuntu.id}"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
+  key_name = "terraform-access"
 
-  tags {
+  tags = {
     Name = "test-ec2"
     Purpose = "tutorial"
     Repo = "github.com/piotrjaromin/terraform-tutorial"

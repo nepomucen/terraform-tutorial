@@ -1,3 +1,7 @@
-output "ec2_ids" {
-  value = "${aws_instance.web.*.id}"
+output "master_ids" {
+  value = "${aws_instance.master_node.*.id}"
+}
+
+output "worker_ids" {
+  value = "${aws_instance.worker_node.*.id}"
 }

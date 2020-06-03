@@ -1,5 +1,5 @@
 variable "ec2_count" {
-  default = 2
+  default = 1
   description = "defines how many ec2 instances should be created"
 }
 
